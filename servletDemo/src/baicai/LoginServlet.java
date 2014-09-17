@@ -4,6 +4,7 @@ import javax.servlet.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 
@@ -11,7 +12,7 @@ import java.sql.*;
 
 @WebServlet(name="login", urlPatterns={"/login"} )
 
-public class LoginServlet 
+public class LoginServlet extends HttpServlet //At first i forgot to extends HttpServlet
 {
 	//To response client's request
 	public void service(HttpServletRequest request, HttpServletResponse response)
@@ -28,7 +29,8 @@ public class LoginServlet
 			//Use javaBean to deal user's request
 			DbDao dd = new DbDao("com.jdbc.mysql.Driver", 
 					"jdbc:mysql://localhost:3306/test", "root", "12345");
-			ResultSet rs = dd.query("select pass from user_table" + "where name = ?", username );
+			ResultSet rs = dd.query("select pass from user_table" + 
+					"where name = ?", username );
 			
 			if( rs.next())
 			{
@@ -36,10 +38,11 @@ public class LoginServlet
 				{
 					//get session
 					HttpSession session = request.getSession(true);
-					//set session
+					//set session's param to trace user's session state
 					session.setAttribute("name", username);
+					//get the forward target
 					rd = request.getRequestDispatcher("/welcom.jsp");
-					
+					//retransmit request
 					rd.forward(request, response);
 				}
 				else
