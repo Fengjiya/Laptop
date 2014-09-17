@@ -37,7 +37,7 @@ public class LoginServlet
 					//get session
 					HttpSession session = request.getSession(true);
 					//set session
-					session.setAttribute("name", username);
+					session.setAttribute("naem", username);
 					rd = request.getRequestDispatcher("/welcom.jsp");
 					
 					rd.forward(request, response);

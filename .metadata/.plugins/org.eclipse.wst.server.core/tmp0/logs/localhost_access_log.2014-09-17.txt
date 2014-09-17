@@ -4,3 +4,8 @@
 127.0.0.1 - - [17/Sep/2014:00:16:53 +0800] "GET /beanTest/beanTest2.jsp HTTP/1.1" 200 349
 127.0.0.1 - - [17/Sep/2014:00:26:54 +0800] "GET / HTTP/1.1" 404 994
 127.0.0.1 - - [17/Sep/2014:00:26:59 +0800] "GET /servletDemo/login.jsp HTTP/1.1" 200 517
+127.0.0.1 - - [17/Sep/2014:08:10:54 +0800] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [17/Sep/2014:08:10:57 +0800] "GET /servletDemo/login.jsp HTTP/1.1" 200 517
+127.0.0.1 - - [17/Sep/2014:08:11:04 +0800] "POST /servletDemo/login HTTP/1.1" 500 3578
+127.0.0.1 - - [17/Sep/2014:08:16:14 +0800] "GET /servletDemo/login.jsp HTTP/1.1" 200 517
+127.0.0.1 - - [17/Sep/2014:08:16:20 +0800] "POST /servletDemo/login HTTP/1.1" 404 992
