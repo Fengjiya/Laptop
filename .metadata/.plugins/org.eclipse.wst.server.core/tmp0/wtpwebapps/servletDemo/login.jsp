@@ -16,7 +16,7 @@
 	%>
 </span>
 
-<form id="login" method="post" action="login">
+<form id="login" method="post" action="Login">
 UserName:<input type="text" name="username"/><br/>
 PassWord:<input type="password" name="pass"/><br/>
 <input type="submit" value="Login"/><br/>

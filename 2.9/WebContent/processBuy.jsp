@@ -3,7 +3,7 @@
 <%@page  errorPage="errors.jsp" %>
 <%@page import="java.util.*" %>
 <%
- Map<String, Integer> itemMap = (Map<String, Integer>)session.getAttribute("itemMap");
+ Map<String, Integer> itemMap = (Map<String, Integer>)session.getAttribute("Map");
 if( itemMap == null )
 {
 	itemMap = new HashMap<String, Integer>();

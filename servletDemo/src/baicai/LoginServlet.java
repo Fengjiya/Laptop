@@ -10,7 +10,7 @@ import javax.servlet.ServletException;
 
 import java.sql.*;
 
-@WebServlet(name="login", urlPatterns={"/login"} )
+@WebServlet(name="Login", urlPatterns={"/Login"} )
 
 public class LoginServlet extends HttpServlet //At first i forgot to extends HttpServlet
 {
@@ -19,7 +19,7 @@ public class LoginServlet extends HttpServlet //At first i forgot to extends Htt
 		throws ServletException, java.io.IOException
 	{
 		String errMsg = "";
-		//since Servlet don't output the response to client,so to transfer it
+		//since Servlet don't output the response to client,so transmit it
 		RequestDispatcher rd;
 		//acquire request's param
 		String username = request.getParameter("username");
@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet //At first i forgot to extends Htt
 			//Use javaBean to deal user's request
 			DbDao dd = new DbDao("com.jdbc.mysql.Driver", 
 					"jdbc:mysql://localhost:3306/test", "root", "12345");
-			ResultSet rs = dd.query("select pass from user_table" + 
+			ResultSet rs = dd.query("select pass from table2" + 
 					"where name = ?", username );
 			
 			if( rs.next())
@@ -41,7 +41,7 @@ public class LoginServlet extends HttpServlet //At first i forgot to extends Htt
 					//set session's param to trace user's session state
 					session.setAttribute("name", username);
 					//get the forward target
-					rd = request.getRequestDispatcher("/welcom.jsp");
+					rd = request.getRequestDispatcher("/Welcome.jsp");
 					//retransmit request
 					rd.forward(request, response);
 				}
