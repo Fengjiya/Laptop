@@ -3,4 +3,5 @@
   <module moduleId="org.eclipse.jst.jee.server:beanTest" serverId="Tomcat v8.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:servletDemo" serverId="Tomcat v8.0 Server at localhost"/>
   <module moduleId="org.eclipse.jst.jee.server:2.9" serverId="Tomcat v8.0 Server at localhost"/>
+  <module moduleId="org.eclipse.jst.jee.server:HelloWorld_structs2" serverId="Tomcat v8.0 Server at localhost"/>
 </modules>

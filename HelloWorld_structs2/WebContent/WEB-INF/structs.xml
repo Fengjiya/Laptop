@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<structs>
+	<package name="myStructs2" namespace="/" extends="structs-default">
+		<action name="login" class="package struct2_HelloWorld.LoginAction">
+			<result name="success">//welcome.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+</structs>
