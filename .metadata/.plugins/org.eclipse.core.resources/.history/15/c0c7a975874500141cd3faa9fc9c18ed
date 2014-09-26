@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class ManipulateWindow
+{
+	public static void main( String[] args)
+	{
+		int n;
+		Scanner scan = new Scanner(System.in);
+		
+	}
+
+}

@@ -1,0 +1,13 @@
+import java.util.Scanner;
+
+public class ManipulateWindow
+{
+	public static void main( String[] args)
+	{
+		int n;
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Input the month you want to search: ");
+		n = scan.nextInt();
+	}
+
+}

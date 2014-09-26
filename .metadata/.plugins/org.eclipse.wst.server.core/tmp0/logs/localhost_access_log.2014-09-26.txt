@@ -1,0 +1,10 @@
+127.0.0.1 - - [26/Sep/2014:18:12:16 +0800] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [26/Sep/2014:18:12:21 +0800] "GET /HelloWorld_structs2/welcome.jsp HTTP/1.1" 404 1056
+127.0.0.1 - - [26/Sep/2014:18:12:52 +0800] "GET /HelloWorld_structs2/login.jsp HTTP/1.1" 404 1052
+127.0.0.1 - - [26/Sep/2014:18:12:55 +0800] "GET /HelloWorld_structs2/login.jsp HTTP/1.1" 404 1052
+127.0.0.1 - - [26/Sep/2014:18:12:56 +0800] "GET /HelloWorld_structs2/login.jsp HTTP/1.1" 404 1052
+127.0.0.1 - - [26/Sep/2014:18:13:03 +0800] "GET /HelloWorld_structs2/login.jsp HTTP/1.1" 404 1052
+127.0.0.1 - - [26/Sep/2014:18:18:05 +0800] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [26/Sep/2014:18:18:07 +0800] "GET /HelloWorld_structs2/login.jsp HTTP/1.1" 404 1052
+127.0.0.1 - - [26/Sep/2014:18:24:04 +0800] "GET / HTTP/1.1" 404 994
+127.0.0.1 - - [26/Sep/2014:18:24:06 +0800] "GET /HelloWorld_structs2/login.jsp HTTP/1.1" 404 1052

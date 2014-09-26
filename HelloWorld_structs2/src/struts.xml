@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sturts PUBLIC 
+ "-//Apache Software Foundation //DTD Struts Configation 2.3//EN"
+ "http://struts.apache.org/dtds/struts-2.3.dtd">
+<structs>
+	<package name="myStruts2" namespace="/" extends="structs-default">
+		<action name="login" class="struct2_HelloWorld.LoginAction">
+			<result name="success">/welcome.jsp</result>
+			<result name="error">/error.jsp</result>
+		</action>
+	</package>
+</structs>

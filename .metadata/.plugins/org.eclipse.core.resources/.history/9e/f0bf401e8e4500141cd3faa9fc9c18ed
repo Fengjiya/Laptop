@@ -1,0 +1,10 @@
+import java.sql.*;
+public class DBDriver
+{
+	private final String driver = "com.mysql.jdbc.Driver";
+	private final String url = "jdbc:mysql://localhost:33.6/test";
+	private final String username = "root";
+	private final String pass = "123456";
+	
+
+}

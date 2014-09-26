@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class SalesFigures
+{
+	static final String[] MONTHS = {"Feb", "Apr", "June", "Aug", "Oct", "Dec"};
+	
+	public static void main(String[] args)
+	{
+		int month;
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Input the month now: ");
+		month = scan.nextInt();
+		
+		for( int i = 0; i < month / 2; i++ )
+		{
+			System.out.println("Input the sale of " + MONTHS[i] + " : ");
+			
+		}
+
+	}
+	
+	
+
+}

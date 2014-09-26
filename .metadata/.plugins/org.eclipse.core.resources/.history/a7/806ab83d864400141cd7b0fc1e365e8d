@@ -1,0 +1,42 @@
+package strut2_HelloWorld;
+
+import com.opensymphony.xwork2.Action;
+import com.opensymphony.xwork2.ActionContext;
+
+public class LoginAction implements Action
+{
+	private String userName;
+	private String password;
+	
+	/*
+	 * execute用来处理用户请求
+	 */
+	public String execute()
+	{
+		if(getUserName().equals("baicai") && getPassword().equals("123456") )
+		{
+			ActionContext.getContext().getSession().put("name", userName);
+			return "sueecss";
+		}
+			
+		else return "false";
+		
+	}
+
+	public String getUserName() {
+		return userName;
+	}
+
+	public void setUserName(String userName) {
+		this.userName = userName;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+}

@@ -1,0 +1,9 @@
+import java.sql.*;
+public class DBDriver
+{
+	private String driver;
+	private String url;
+	private String username;
+	private String pass;
+
+}
