@@ -1,0 +1,38 @@
+package DbconnDemo.baicai;
+
+import java.sql.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class Test
+{
+	public static void main(String[] args) throws Exception
+	{
+		DbDao dd = new DbDao();
+		
+		System.out.println("Input the month you want to query: ");
+		int month = new Scanner(System.in).nextInt();
+		while(  month < 1 || month > 12  )
+		{
+			//此处没有处理当month为小数的情况，需要再次处理
+			System.out.println("please input the month again!");
+			month = new Scanner(System.in).nextInt();
+		}
+		
+		String sql = "select month, sale from sales where id<=?";
+		ResultSet rs = dd.query(sql , month);
+		
+		Map<String, Double> lhm = new LinkedHashMap<>();
+		while( rs.next() )
+		{
+			System.out.println( rs.getString(2) + "\t" + rs.getDouble(3) );
+			lhm.put(rs.getString(2), rs.getDouble(3));
+			
+		}
+		
+		System.out.println(lhm);
+		
+	}
+
+}

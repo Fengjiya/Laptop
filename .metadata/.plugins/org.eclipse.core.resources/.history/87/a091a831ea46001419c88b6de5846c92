@@ -1,0 +1,19 @@
+package test;
+
+/**
+ * @author baicai
+ *
+ */
+public class Test
+{
+	private static int a = 39;
+	/**
+	 * @param args
+	 */
+	public static void main ( String[] args) 
+	{
+		new Test().a++;
+		new Test().a++;
+		System.out.println(a);
+	}
+}

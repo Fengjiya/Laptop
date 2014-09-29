@@ -1,0 +1,16 @@
+package test;
+
+import java.sql.*;
+
+
+public class Test
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysq:/localhost:3306/test", "root", "123456");
+		PreparedStatement pstm = conn.prepareStatement("select month, sale from sales where id < ?");
+		ResultSet rs = pstm.executeQuery();
+		
+	}
+}

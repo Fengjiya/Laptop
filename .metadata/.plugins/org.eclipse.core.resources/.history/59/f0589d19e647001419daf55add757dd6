@@ -1,0 +1,17 @@
+package DbconnDemo.baicai;
+
+import java.sql.*;
+import java.util.Scanner;
+
+public class Test
+{
+	public static void main(String[] args) throws Exception
+	{
+		DbDao dd = new DbDao();
+		System.out.println("Input the month you want to query: ");
+		int month = new Scanner(System.in).nextInt();
+		ResultSet rs = dd.query("select month, sale from sales where id<=?", month);
+		
+	}
+
+}

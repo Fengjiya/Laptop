@@ -1,0 +1,13 @@
+package DbconnDemo.baicai;
+
+import java.sql.Connection;
+
+public class DbDao
+{
+	private Connection conn;
+	private String url;
+	private String username;
+	private String password;
+	
+
+}

@@ -1,0 +1,23 @@
+package test;
+
+import java.sql.*;
+
+
+public class Test
+{
+	public static void main(String[] args) throws Exception
+	{
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "123456");
+		String sql = "select month, sale from sales where id < 6 ";
+		PreparedStatement pstm = conn.prepareStatement(sql );
+		ResultSet rs = pstm.executeQuery();
+		while( rs.next() )
+		{
+			System.out.println(rs.getString(2) + "\t" + rs.getDouble(3) );
+			
+		}
+		
+		
+	}
+}

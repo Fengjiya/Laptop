@@ -1,38 +1,42 @@
 package test;
 
 import java.sql.*;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 
 public class Test
 {
-	public static void main ( String[] args) throws SQLException
+	public static void main(String[] args) throws Exception
 	{
-		connDb();
-		//System.out.println(System.getProperties().get("java.library.path"));
-	}
-	
-	public static void  connDb() throws SQLException
-	{
-		Connection conn = null;
-		try
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "123456");
+		//? need the month user input.
+		String sql = "select month, sale from sales where id <= ? ";
+		PreparedStatement pstm = conn.prepareStatement(sql );
+		
+		int month = 0;
+		System.out.println("Input the month you want to query : ");
+		month = new Scanner(System.in).nextInt();
+		while(  month < 1 || month > 12  )
 		{
-			 Class.forName("com.mysql.jdbc.Driver");// 加载Mysql数据驱动  
-	         conn = DriverManager.getConnection( "jdbc:mysql://localhost:3306/test", "root", "123456");// 创建数据连接  
-			System.out.println("Database load Successfully!");
+			//此处没有处理当month为小数的情况，需要再次处理
+			System.out.println("please input the month again!");
+			month = new Scanner(System.in).nextInt();
 		}
-		catch( ClassNotFoundException e )
+		
+		Map<String, Double> lhm = new LinkedHashMap<>();
+		
+		pstm.setInt(1, month);
+		ResultSet rs = pstm.executeQuery();
+		while( rs.next() )
 		{
-			System.out.println("Unable to load Database	! ");
-			e.printStackTrace();
+			System.out.println( rs.getString(1) + "\t" + rs.getDouble(2) );
+			lhm.put(rs.getString(1), rs.getDouble(2));
+			
 		}
-		catch( SQLException e )
-		{
-			System.out.println("Unable to load Database	! ");
-			e.printStackTrace();
-		}
-		finally
-		{
-			conn.close();
-		}
+		
+		System.out.println(lhm);
 	}
 }

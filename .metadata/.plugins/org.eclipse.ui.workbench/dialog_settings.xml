@@ -4,12 +4,16 @@
 		<item value="960" key="dialogWidth"/>
 		<item value="549" key="dialogHeight"/>
 		<list key="orderedProviders">
+			<item value="org.eclipse.ui.wizards"/>
 		</list>
 		<list key="textArray">
+			<item value="connection"/>
 		</list>
 		<list key="orderedElements">
+			<item value="org.eclipse.datatools.connectivity.ui.wizard.newrepositorywizard"/>
 		</list>
 		<list key="textEntries">
+			<item value="1"/>
 		</list>
 	</section>
 	<section name="WorkbenchPreferenceDialogSettings">

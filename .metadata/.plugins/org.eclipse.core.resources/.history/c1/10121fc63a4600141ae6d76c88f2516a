@@ -1,0 +1,74 @@
+package DbconnDemo.baicai;
+
+import java.sql.*;
+
+
+public class DbDao
+{
+	private Connection conn;
+	private final String driver = "com.mysql.jdbc.Driver";
+	private final String url = "jdbc:mysql://localhost:33.6/test";
+	private final String username = "root";
+	private final String password = "123456";
+	
+	public Connection getConnection() throws Exception
+	{
+		if( conn == null )
+		{
+			Class.forName( driver );
+			conn = DriverManager.getConnection(url, username, password );
+		}
+		
+		return conn;
+	}
+	
+	public ResultSet query( String sql, Object... args ) throws Exception
+	{
+		PreparedStatement pstm = getConnection().prepareStatement(sql);
+		for( int i = 0; i < args.length; i++ )
+		{
+			pstm.setObject(i+1, args[i]);
+		}
+		
+		return pstm.executeQuery();
+	}
+	
+	public void modify(String sql, Object...objects ) throws Exception
+	{
+		PreparedStatement pstm = getConnection().prepareStatement(sql);
+		for( int i = 0; i < objects.length; i++ )
+		{
+			pstm.setObject(i+1, objects[i]);
+		}
+		
+		pstm.executeUpdate();
+		
+		pstm.close();
+	}
+	
+	public void closeConn() throws Exception
+	{
+		if( conn != null && conn.isClosed())
+			conn.close();
+	}
+	
+	public String getUrl() {
+		return url;
+	}
+	public void setUrl(String url) {
+		this.url = url;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+}
