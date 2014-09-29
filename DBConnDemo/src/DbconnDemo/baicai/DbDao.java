@@ -1,18 +1,35 @@
 package DbconnDemo.baicai;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.*;
+import java.util.Properties;
 
 
 public class DbDao
 {
 	private Connection conn;
-	private final String driver = "com.mysql.jdbc.Driver";
-	private final String url = "jdbc:mysql://localhost:3306/test";
-	private final String username = "root";
-	private final String password = "123456";
+	private  String driver;
+	private  String url;
+	private  String username;
+	private  String password;
+//	private final String dbDriver = "DbDriver.ini";
+	
+	private void initParam() throws IOException
+	{
+		Properties prop = new Properties();
+		prop.load(new FileInputStream("DbDriver.ini"));
+		
+		driver = prop.getProperty("dirver");
+		url = prop.getProperty("url");
+		username = prop.getProperty("username");
+		password = prop.getProperty("password");
+	}
 	
 	public Connection getConnection() throws Exception
 	{
+		initParam();//首先初始化数据库的几个参数
+		
 		if( conn == null )
 		{
 			Class.forName( this.driver );

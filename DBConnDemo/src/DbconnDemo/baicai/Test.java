@@ -27,7 +27,7 @@ public class Test
 		while( rs.next() )
 		{
 			System.out.println( rs.getString(1) + "\t" +rs.getDouble(2) );
-			lhm.put(rs.getString(1), rs.getDouble(2));
+			lhm.put(rs.getString(1), rs.getDouble(1));
 			
 		}
 		
